@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a142b">
+
+    <meta name="description"
+          content="Explore property photos, amenities, location and booking details with Stackly.">
+
+    <title>Property Details | Stackly</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="shared-theme.css">
+    <link rel="stylesheet" href="property-details.css">
+
+    <script src="property-details.js" defer></script>
+</head>
+
+<body class="property-details-page is-loading">
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader" aria-label="Loading Stackly">
+        <div class="loader-content">
+            <div class="loader-logo-wrap">
+                <img src="assets/stackly%20logo.webp"
+                     class="loader-logo"
+                     alt="Stackly logo">
+            </div>
+
+            <p class="loader-quote">
+                Your Dream Home. Your Next Chapter.
+            </p>
+
+            <div class="loader-track" aria-hidden="true">
+                <span></span>
+            </div>
+
+            <p class="loader-message" id="loaderMessage">
+                Finding your perfect place...
+            </p>
+        </div>
+    </div>
+
+    <!-- SAME BACKGROUND GLOW EFFECTS -->
+    <div class="background-effects" aria-hidden="true">
+        <span class="glow glow-one"></span>
+        <span class="glow glow-two"></span>
+        <span class="glow glow-three"></span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <div class="container navbar">
+
+            <a class="brand" href="index.html" aria-label="Stackly home">
+                <img src="assets/stackly%20logo.webp"
+                     class="brand-logo"
+                     alt="Stackly">
+
+                <span class="brand-tagline">
+                    Your Dream Home. Your Next Chapter.
+                </span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation"
+                    aria-controls="navMenu"
+                    aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active"
+                   href="properties.html"
+                   aria-current="page">Properties</a>
+                <a class="nav-link" href="index.html#about">About</a>
+                <a class="nav-link" href="index.html#categories">Services</a>
+                <a class="nav-link" href="index.html#contact">Contact</a>
+
+                
+<a
+    class="favorite-nav-link"
+    href="favorites.html"
+    data-favorites-link
+    aria-label="View favourites"
+    title="Favourites"
+>
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span
+        class="favorite-count"
+        id="favoriteCount"
+        data-favorite-count
+    >0</span>
+</a>
+
+
+
+                    <a class="login-link" href="login.html">Login</a>
+
+                    <a class="btn btn-primary nav-cta" href="signup.html">
+                        Signup
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="mainContent">
+
+        <!-- BREADCRUMB -->
+        <section class="breadcrumb-section">
+            <div class="container breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                <a href="properties.html">Properties</a>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                <span id="breadcrumbProperty">Property Details</span>
+            </div>
+        </section>
+
+        <!-- PROPERTY DETAILS -->
+        <section class="property-details-section">
+            <div class="container" id="propertyDetailsContainer">
+
+                <!-- PROPERTY HEADING -->
+                <div class="property-heading reveal">
+                    <div class="property-heading-content">
+                        <span class="property-status" id="propertyStatus">
+                            <span class="status-dot"></span>
+                            Featured Property
+                        </span>
+
+                        <h1 id="propertyTitle">Loading property...</h1>
+
+                        <p class="property-location">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <span id="propertyLocation">Finding location...</span>
+                        </p>
+                    </div>
+
+                    <div class="property-heading-actions">
+                        <button class="icon-action favorite-button"
+                                id="favoriteButton"
+                                type="button"
+                                aria-label="Add property to favourites"
+                                aria-pressed="false">
+                            <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                        </button>
+
+                        <button class="icon-action share-button"
+                                id="shareButton"
+                                type="button"
+                                aria-label="Share property">
+                            <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- IMAGE GALLERY -->
+                <div class="property-gallery reveal">
+                    <div class="gallery-main">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=85"
+                             alt="Property exterior"
+                             id="mainPropertyImage">
+
+                        <span class="gallery-image-count" id="imageCount">
+                            <i class="fa-regular fa-images" aria-hidden="true"></i>
+                            1 / 4
+                        </span>
+
+                        <button class="gallery-arrow gallery-prev"
+                                id="galleryPrev"
+                                type="button"
+                                aria-label="Previous image">
+                            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+
+                        <button class="gallery-arrow gallery-next"
+                                id="galleryNext"
+                                type="button"
+                                aria-label="Next image">
+                            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="gallery-thumbnails" id="galleryThumbnails"></div>
+                </div>
+
+                <!-- DETAILS LAYOUT -->
+                <div class="details-layout">
+
+                    <div class="details-main-column">
+
+                        <!-- QUICK STATS -->
+                        <div class="property-stats-card reveal">
+                            <div class="property-stat">
+                                <span class="stat-icon">
+                                    <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <strong id="propertyBedrooms">4</strong>
+                                    <span>Bedrooms</span>
+                                </div>
+                            </div>
+
+                            <div class="property-stat">
+                                <span class="stat-icon">
+                                    <i class="fa-solid fa-bath" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <strong id="propertyBathrooms">3</strong>
+                                    <span>Bathrooms</span>
+                                </div>
+                            </div>
+
+                            <div class="property-stat">
+                                <span class="stat-icon">
+                                    <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <strong id="propertyArea">2,450</strong>
+                                    <span>Sq. Ft.</span>
+                                </div>
+                            </div>
+
+                            <div class="property-stat">
+                                <span class="stat-icon">
+                                    <i class="fa-solid fa-car" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <strong id="propertyParking">2</strong>
+                                    <span>Parking</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OVERVIEW -->
+                        <section class="details-card reveal">
+                            <div class="section-heading">
+                                <div>
+                                    <span class="eyebrow">PROPERTY INFORMATION</span>
+                                    <h2>Property Overview</h2>
+                                </div>
+                            </div>
+
+                            <p class="property-description" id="propertyDescription">
+                                Discover a beautiful home designed for comfortable
+                                living, with thoughtfully planned spaces and modern finishes.
+                            </p>
+
+                            <div class="overview-divider"></div>
+
+                            <div class="overview-grid">
+                                <div class="overview-item">
+                                    <span>Property ID</span>
+                                    <strong id="propertyId">HN-001</strong>
+                                </div>
+
+                                <div class="overview-item">
+                                    <span>Property Type</span>
+                                    <strong id="propertyType">Villa</strong>
+                                </div>
+
+                                <div class="overview-item">
+                                    <span>Property Status</span>
+                                    <strong id="overviewStatus">For Sale</strong>
+                                </div>
+
+                                <div class="overview-item">
+                                    <span>Year Built</span>
+                                    <strong id="propertyYear">2022</strong>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- AMENITIES -->
+                        <section class="details-card reveal">
+                            <div class="section-heading">
+                                <div>
+                                    <span class="eyebrow">COMFORT & CONVENIENCE</span>
+                                    <h2>Property Amenities</h2>
+                                </div>
+                            </div>
+
+                            <div class="amenities-grid" id="amenitiesGrid"></div>
+                        </section>
+
+                        <!-- LOCATION / MAP -->
+                        <section class="details-card location-card reveal">
+                            <div class="section-heading">
+                                <div>
+                                    <span class="eyebrow">EXPLORE THE AREA</span>
+                                    <h2>Location & Neighborhood</h2>
+                                </div>
+                            </div>
+
+                            <p>
+                                Explore nearby shops, restaurants, schools and everyday
+                                essentials around your selected property.
+                            </p>
+
+                            <div class="location-map-frame">
+                                <iframe id="propertyMap"
+                                        title="Property location map"
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        src="about:blank">
+                                </iframe>
+                            </div>
+
+                            <div class="location-map-footer">
+                                <span class="location-map-icon">📍</span>
+                                <div>
+                                    <h3 id="mapLocationTitle">Property Location</h3>
+                                    <p id="mapLocationText">Explore the neighborhood.</p>
+                                </div>
+
+                                <a href="https://maps.google.com/"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="btn btn-outline"
+                                   id="mapLink">
+                                    <i class="fa-solid fa-map" aria-hidden="true"></i>
+                                    Open Map
+                                </a>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <!-- RIGHT SIDEBAR -->
+                    <aside class="property-sidebar">
+
+                        <div class="booking-card reveal">
+                            <span class="sidebar-label">PROPERTY PRICE</span>
+
+                            <div class="property-price" id="propertyPrice">$450,000</div>
+                            <p class="price-caption" id="priceCaption">One-time purchase price</p>
+
+                            <div class="booking-divider"></div>
+
+                            <div class="sidebar-info-row">
+                                <span><i class="fa-solid fa-house" aria-hidden="true"></i> Property Type</span>
+                                <strong id="sidebarType">Villa</strong>
+                            </div>
+
+                            <div class="sidebar-info-row">
+                                <span><i class="fa-solid fa-bed" aria-hidden="true"></i> Bedrooms</span>
+                                <strong id="sidebarBedrooms">4</strong>
+                            </div>
+
+                            <div class="sidebar-info-row">
+                                <span><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> Area</span>
+                                <strong id="sidebarArea">2,450 sq.ft.</strong>
+                            </div>
+
+                            <a href="booking.html"
+                               class="btn btn-primary booking-button"
+                               id="bookViewingButton">
+                                <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                                Book Now
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="login.html" class="btn btn-outline contact-agent-button">
+                                <i class="fa-regular fa-comments" aria-hidden="true"></i>
+                                Contact an Agent
+                            </a>
+
+                            <div class="secure-note">
+                                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                                <span>Your information is handled securely.</span>
+                            </div>
+                        </div>
+
+                        <div class="help-card reveal">
+                            <div class="help-icon">🏡</div>
+                            <h3>Need Help Finding a Home?</h3>
+                            <p>Our team can help you find a property that suits your lifestyle and budget.</p>
+                            <a href="index.html#contact">
+                                Talk to Our Team
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    </aside>
+                </div>
+
+                <div class="back-properties reveal">
+                    <a href="properties.html" class="btn btn-outline">
+                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                        Back to Properties
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: same structure as homepage -->
+    <footer class="site-footer" id="contact">
+        <div class="container footer-main">
+
+            <div class="footer-brand-column">
+                <a class="brand footer-brand" href="index.html" aria-label="Stackly home">
+                    <img src="assets/stackly%20logo.webp" class="brand-logo" alt="Stackly">
+                    <span class="brand-tagline">Your Dream Home. Your Next Chapter.</span>
+                </a>
+
+                <p>
+                    Helping you discover a place that feels like home.
+                    Explore thoughtfully selected properties and take
+                    the next step with confidence.
+                </p>
+
+                <div class="social-links" aria-label="Social media">
+                    <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+
+        <a href="properties.html">Properties</a>
+
+        <a href="index.html#about">About</a>
+
+        <a href="index.html#categories">Services</a>
+
+        <a href="index.html#contact">Contact</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Your Account</h3>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Signup</a>
+                <a href="my-bookings.html">My Bookings</a>
+                <a href="properties.html">Browse Properties</a>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Get in Touch</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <span>Coimbatore, Tamil Nadu, India</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <span>hello@stackly.example</span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                    <span>Monday – Saturday, 9 AM – 6 PM</span>
+                </p>
+
+                <form class="footer-subscribe" id="footerSubscribe">
+                    <label for="subscribeEmail">Get Property Updates</label>
+                    <div class="subscribe-field">
+                        <input id="subscribeEmail"
+                               name="email"
+                               type="email"
+                               placeholder="Your email address"
+                               autocomplete="email"
+                               required>
+                        <button type="submit" aria-label="Subscribe">
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Stackly. All rights reserved.</p>
+            <div>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+</body>
+</html>
+

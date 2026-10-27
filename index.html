@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Discover beautiful homes, apartments, villas and condos with Stackly. Find a property that feels like home."
+  >
+
+  <meta name="theme-color" content="#101d3a">
+
+  <title>Stackly | Your Dream Home. Your Next Chapter.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- Existing stylesheet -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Existing homepage JavaScript -->
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+
+  <!-- =========================================
+       PRELOADER
+       Preserve existing loader design and hooks
+  ========================================== -->
+
+  <div class="preloader" id="preloader" aria-label="Loading Stackly">
+
+    <div class="loader-content">
+
+      <div class="loader-logo-wrap">
+        <img
+          src="assets/stackly%20logo.webp"
+          class="loader-logo"
+          alt="Stackly logo"
+        >
+      </div>
+
+      <p class="loader-quote">
+        Your Dream Home. Your Next Chapter.
+      </p>
+
+      <div class="loader-track" aria-hidden="true">
+        <span></span>
+      </div>
+
+      <p class="loader-message" id="loaderMessage">
+        Finding your perfect place...
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       BACKGROUND GLOW EFFECTS
+  ========================================== -->
+
+  <div class="background-effects" aria-hidden="true">
+    <span class="glow glow-one"></span>
+    <span class="glow glow-two"></span>
+    <span class="glow glow-three"></span>
+  </div>
+
+
+  <!-- =========================================
+       HEADER / NAVIGATION
+  ========================================== -->
+
+  <header class="site-header" id="siteHeader">
+
+    <div class="container navbar">
+
+      <!-- Original Stackly logo -->
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Stackly home"
+      >
+
+        <img
+          src="assets/stackly%20logo.webp"
+          class="brand-logo"
+          alt="Stackly"
+        >
+
+        <span class="brand-tagline">
+          Your Dream Home. Your Next Chapter.
+        </span>
+
+      </a>
+
+
+      <!-- Mobile navigation toggle -->
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-controls="navMenu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <!-- Main navigation -->
+      <nav
+        class="nav-menu"
+        id="navMenu"
+        aria-label="Main navigation"
+      >
+
+        <a class="nav-link active" href="index.html">
+          Home
+        </a>
+
+        <a class="nav-link" href="properties.html">
+          Properties
+        </a>
+
+        <a class="nav-link" href="index.html#about">
+          About
+        </a>
+
+        <a class="nav-link" href="index.html#categories">
+          Services
+        </a>
+
+        <a class="nav-link" href="index.html#contact">
+          Contact
+        </a>
+
+
+        <!-- Navigation actions -->
+        <div class="nav-actions">
+
+          
+<!-- Favourites -->
+<a class="favorite-nav-link"
+   href="favorites.html"
+   data-favorites-link
+   aria-label="View favourites"
+   title="Favourites">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span class="favorite-count" id="favoriteCount">0</span>
+</a>
+
+
+
+          <!-- Login -->
+          <a class="login-link" href="login.html">
+            Login
+          </a>
+
+          <!-- Signup -->
+          <a class="btn btn-primary nav-cta" href="signup.html">
+            Signup
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN CONTENT
+  ========================================== -->
+
+  <main>
+
+
+    <!-- =======================================
+         HERO SECTION
+    ======================================== -->
+
+    <section class="hero-section" id="home">
+
+      <div class="hero-image" aria-hidden="true"></div>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+
+
+      <div class="container hero-container">
+
+        <!-- Hero content -->
+        <div class="hero-content reveal">
+
+          <span class="eyebrow hero-eyebrow">
+            <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+            FIND A PLACE THAT FEELS LIKE YOU
+          </span>
+
+          <h1>
+            Find Your
+            <span class="hero-highlight">Perfect Property</span>
+            <br>
+            for a Better Tomorrow.
+          </h1>
+
+          <p class="hero-description">
+            From the first search to the final key, discover spaces
+            that fit your lifestyle, your dreams, and your next chapter.
+          </p>
+
+
+          <!-- Hero buttons -->
+          <div class="hero-buttons">
+
+            <a class="btn btn-accent" href="properties.html">
+              Explore Properties
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+
+            <a class="btn btn-outline" href="#categories">
+              <i class="fa-regular fa-compass" aria-hidden="true"></i>
+              Browse Categories
+            </a>
+
+          </div>
+
+
+          <!-- Trust information -->
+          <div class="hero-trust">
+
+            <div class="trust-avatars" aria-hidden="true">
+
+              <img
+                src="assets/home/image 01.webp"
+                alt=""
+              >
+
+              <img
+                src="assets/home/image 02.webp"
+                alt=""
+              >
+
+              <img
+                src="assets/home/image 03.webp"
+                alt=""
+              >
+
+              <span class="trust-more">+</span>
+
+            </div>
+
+            <div>
+              <strong>Trusted by home seekers</strong>
+              <span>Find a place to call your own</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Floating hero card -->
+        <div class="hero-floating-card">
+
+          <span class="floating-card-icon">
+            <i class="fa-solid fa-house-circle-check" aria-hidden="true"></i>
+          </span>
+
+          <div>
+            <strong>Your next chapter starts here</strong>
+            <p>Discover homes made for living.</p>
+          </div>
+
+          <i
+            class="fa-solid fa-arrow-up-right-from-square floating-arrow"
+            aria-hidden="true"
+          ></i>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================
+           PROPERTY SEARCH
+      ====================================== -->
+
+      <div class="container search-container">
+
+        <form class="property-search" id="propertySearch">
+
+          <!-- Location -->
+          <div class="search-field">
+
+            <label for="searchLocation">
+              Location
+            </label>
+
+            <div class="input-with-icon">
+
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+
+              <input
+                id="searchLocation"
+                name="location"
+                type="text"
+                placeholder="City, neighbourhood..."
+                autocomplete="off"
+              >
+
+            </div>
+
+          </div>
+
+
+          <span class="search-divider" aria-hidden="true"></span>
+
+
+          <!-- Property type -->
+          <div class="search-field">
+
+            <label for="propertyType">
+              Property Type
+            </label>
+
+            <div class="input-with-icon">
+
+              <i class="fa-solid fa-building" aria-hidden="true"></i>
+
+              <select id="propertyType" name="type">
+
+                <option value="">All property types</option>
+                <option value="house">House</option>
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+                <option value="condo">Condo</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <span class="search-divider" aria-hidden="true"></span>
+
+
+          <!-- Price range -->
+          <div class="search-field">
+
+            <label for="priceRange">
+              Price Range
+            </label>
+
+            <div class="input-with-icon">
+
+              <i class="fa-solid fa-wallet" aria-hidden="true"></i>
+
+              <select id="priceRange" name="price">
+
+                <option value="">Any price</option>
+                <option value="100000">Up to $100,000</option>
+                <option value="250000">Up to $250,000</option>
+                <option value="500000">Up to $500,000</option>
+                <option value="750000">Up to $750,000</option>
+                <option value="1000000">Up to $1,000,000</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <!-- Search button -->
+          <button
+            class="btn btn-primary search-button"
+            type="submit"
+          >
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            Search Homes
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         FEATURED PROPERTIES
+    ======================================== -->
+
+    <section class="section featured-section" id="featured">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+
+            <span class="eyebrow">
+              HANDPICKED FOR YOU
+            </span>
+
+            <h2>
+              Featured <span>Properties</span>
+            </h2>
+
+            <p>
+              Explore standout homes selected for their style,
+              comfort, and location.
+            </p>
+
+          </div>
+
+          <a
+            class="text-link desktop-view-all"
+            href="properties.html"
+          >
+            View all properties
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+        </div>
+
+
+        <div class="property-grid" id="featuredProperties">
+
+
+          <!-- Property 1 -->
+          <article
+            class="property-card reveal"
+            data-location="Bengaluru"
+            data-type="villa"
+            data-price="485000"
+          >
+
+            <div class="property-image-wrap">
+
+              <img
+                class="property-image"
+                src="assets/home/image 04.webp"
+                alt="Contemporary luxury villa"
+                loading="lazy"
+              >
+
+              <span class="property-badge">
+                Featured
+              </span>
+
+              <button
+                class="favorite-button"
+                type="button"
+                data-favorite-id="1"
+                aria-label="Add Luxury Green Villa to favourites"
+                aria-pressed="false"
+              >
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              </button>
+
+              <span class="image-count">
+                <i class="fa-regular fa-image" aria-hidden="true"></i>
+                12 photos
+              </span>
+
+            </div>
+
+
+            <div class="property-info">
+
+              <div class="property-price">
+                <strong>$485,000</strong>
+                <span>/ total</span>
+              </div>
+
+              <h3>
+                <a href="property-details.html?id=1">
+                  Luxury Green Villa
+                </a>
+              </h3>
+
+              <p class="property-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                Whitefield, Bengaluru
+              </p>
+
+              <div class="property-features">
+
+                <span>
+                  <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                  4 Beds
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-bath" aria-hidden="true"></i>
+                  3 Baths
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+                  2,400 sq.ft
+                </span>
+
+              </div>
+
+              <a
+                class="property-link"
+                href="property-details.html?id=1"
+              >
+                View property
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- Property 2 -->
+          <article
+            class="property-card reveal"
+            data-location="Chennai"
+            data-type="apartment"
+            data-price="220000"
+          >
+
+            <div class="property-image-wrap">
+
+              <img
+                class="property-image"
+                src="assets/home/image 05.webp"
+                alt="Modern apartment with elegant interiors"
+                loading="lazy"
+              >
+
+              <span class="property-badge badge-new">
+                New Listing
+              </span>
+
+              <button
+                class="favorite-button"
+                type="button"
+                data-favorite-id="2"
+                aria-label="Add Modern City Apartment to favourites"
+                aria-pressed="false"
+              >
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              </button>
+
+              <span class="image-count">
+                <i class="fa-regular fa-image" aria-hidden="true"></i>
+                8 photos
+              </span>
+
+            </div>
+
+
+            <div class="property-info">
+
+              <div class="property-price">
+                <strong>$220,000</strong>
+                <span>/ total</span>
+              </div>
+
+              <h3>
+                <a href="property-details.html?id=2">
+                  Modern City Apartment
+                </a>
+              </h3>
+
+              <p class="property-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                OMR, Chennai
+              </p>
+
+              <div class="property-features">
+
+                <span>
+                  <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                  3 Beds
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-bath" aria-hidden="true"></i>
+                  2 Baths
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+                  1,450 sq.ft
+                </span>
+
+              </div>
+
+              <a
+                class="property-link"
+                href="property-details.html?id=2"
+              >
+                View property
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- Property 3 -->
+          <article
+            class="property-card reveal"
+            data-location="Coimbatore"
+            data-type="house"
+            data-price="175000"
+          >
+
+            <div class="property-image-wrap">
+
+              <img
+                class="property-image"
+                src="assets/home/image 06.webp"
+                alt="Warm and welcoming family house"
+                loading="lazy"
+              >
+
+              <span class="property-badge">
+                Popular
+              </span>
+
+              <button
+                class="favorite-button"
+                type="button"
+                data-favorite-id="3"
+                aria-label="Add Garden View Family Home to favourites"
+                aria-pressed="false"
+              >
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              </button>
+
+              <span class="image-count">
+                <i class="fa-regular fa-image" aria-hidden="true"></i>
+                10 photos
+              </span>
+
+            </div>
+
+
+            <div class="property-info">
+
+              <div class="property-price">
+                <strong>$175,000</strong>
+                <span>/ total</span>
+              </div>
+
+              <h3>
+                <a href="property-details.html?id=3">
+                  Garden View Family Home
+                </a>
+              </h3>
+
+              <p class="property-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                Saravanampatti, Coimbatore
+              </p>
+
+              <div class="property-features">
+
+                <span>
+                  <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                  3 Beds
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-bath" aria-hidden="true"></i>
+                  2 Baths
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+                  1,800 sq.ft
+                </span>
+
+              </div>
+
+              <a
+                class="property-link"
+                href="property-details.html?id=3"
+              >
+                View property
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- Mobile view-all button -->
+        <div class="mobile-view-all">
+
+          <a class="btn btn-secondary" href="properties.html">
+            View all properties
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         PROPERTY CATEGORIES
+    ======================================== -->
+
+    <section class="section categories-section" id="categories">
+
+      <div class="container">
+
+        <div class="section-heading centered-heading reveal">
+
+          <div>
+
+            <span class="eyebrow">
+              EXPLORE YOUR OPTIONS
+            </span>
+
+            <h2>
+              Find Homes by <span>Category</span>
+            </h2>
+
+            <p>
+              From practical city living to spacious family retreats,
+              explore a home style that fits your life.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+          <!-- Houses -->
+          <a
+            class="category-card category-card-image reveal"
+            href="properties.html?type=house"
+          >
+
+            <div class="category-image-wrap">
+
+              <img
+                src="assets/home/houses.webp"
+                alt="Independent family house"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="category-card-content">
+
+              <span class="category-kicker">
+                SPACE TO GROW
+              </span>
+
+              <h3>Houses</h3>
+
+              <p>
+                Comfort, privacy, and room for every chapter.
+              </p>
+
+              <span class="category-link">
+                Explore houses
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+
+            </div>
+
+          </a>
+
+
+
+          <!-- Apartments -->
+          <a
+            class="category-card category-card-image reveal"
+            href="properties.html?type=apartment"
+          >
+
+            <div class="category-image-wrap">
+
+              <img
+                src="assets/home/appartments.webp"
+                alt="Contemporary apartment building"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="category-card-content">
+
+              <span class="category-kicker">
+                CITY LIVING
+              </span>
+
+              <h3>Apartments</h3>
+
+              <p>
+                Modern spaces close to the places you love.
+              </p>
+
+              <span class="category-link">
+                Explore apartments
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+
+            </div>
+
+          </a>
+
+
+
+          <!-- Villas -->
+          <a
+            class="category-card category-card-image reveal"
+            href="properties.html?type=villa"
+          >
+
+            <div class="category-image-wrap">
+
+              <img
+                src="assets/home/villas.webp"
+                alt="Luxury villa with garden"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="category-card-content">
+
+              <span class="category-kicker">
+                A LITTLE MORE LUXURY
+              </span>
+
+              <h3>Villas</h3>
+
+              <p>
+                Beautiful design, extra space, and a private retreat.
+              </p>
+
+              <span class="category-link">
+                Explore villas
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+
+            </div>
+
+          </a>
+
+
+
+          <!-- Condos -->
+          <a
+            class="category-card category-card-image reveal"
+            href="properties.html?type=condo"
+          >
+
+            <div class="category-image-wrap">
+
+              <img
+                src="assets/home/condos.webp"
+                alt="Premium condominium residence"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="category-card-content">
+
+              <span class="category-kicker">
+                SMART &amp; STYLISH
+              </span>
+
+              <h3>Condos</h3>
+
+              <p>
+                Effortless living with a polished modern feel.
+              </p>
+
+              <span class="category-link">
+                Explore condos
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         ABOUT STACKLY
+    ======================================== -->
+
+    <section class="section about-section" id="about">
+
+      <div class="container about-grid">
+
+
+        <!-- About image -->
+        <div class="about-visual reveal">
+
+          <span
+            class="about-decoration"
+            aria-hidden="true"
+          ></span>
+
+          <div class="about-main-image">
+
+            <img
+              src="assets/home/image 07.webp"
+              alt="Sunlit modern living room"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="about-experience-card">
+
+            <i class="fa-solid fa-key" aria-hidden="true"></i>
+
+            <div>
+              <strong>A better way home</strong>
+              <span>From search to keys</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- About content -->
+        <div class="about-content reveal">
+
+          <span class="eyebrow">
+            WHY CHOOSE STACKLY
+          </span>
+
+          <h2>
+            A home is more than an address.
+            <span>It is your next chapter.</span>
+          </h2>
+
+          <p>
+            At Stackly, finding a home should feel exciting, clear,
+            and personal. Explore thoughtfully selected properties
+            and discover a space that feels right for the way you
+            want to live.
+          </p>
+
+
+          <div class="about-points">
+
+
+            <div class="about-point">
+
+              <span class="point-icon">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </span>
+
+              <div>
+
+                <h3>Homes for different lifestyles</h3>
+
+                <p>
+                  Explore a variety of property types, locations,
+                  and budgets.
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="about-point">
+
+              <span class="point-icon">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </span>
+
+              <div>
+
+                <h3>Clear property details</h3>
+
+                <p>
+                  Compare the information that matters before
+                  making your next move.
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="about-point">
+
+              <span class="point-icon">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </span>
+
+              <div>
+
+                <h3>A smoother search experience</h3>
+
+                <p>
+                  Use helpful filters to narrow your search
+                  and save time.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <a class="btn btn-primary" href="properties.html">
+            Discover Stackly
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         CALL TO ACTION
+    ======================================== -->
+
+    <section class="cta-section">
+
+      <div class="container">
+
+        <div class="cta-card reveal">
+
+          <div
+            class="cta-decoration cta-decoration-one"
+            aria-hidden="true"
+          ></div>
+
+          <div
+            class="cta-decoration cta-decoration-two"
+            aria-hidden="true"
+          ></div>
+
+
+          <div class="cta-content">
+
+            <span class="eyebrow cta-eyebrow">
+              YOUR NEXT CHAPTER AWAITS
+            </span>
+
+            <h2>
+              Ready to find a place
+              <br>
+              you will love?
+            </h2>
+
+            <p>
+              Start exploring homes that match your plans,
+              priorities, and way of life.
+            </p>
+
+
+            <div class="cta-buttons">
+
+              <a class="btn btn-accent" href="properties.html">
+                Explore Properties
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+
+              <a class="btn btn-light-outline" href="signup.html">
+                Create an Account
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="cta-icon" aria-hidden="true">
+            <i class="fa-solid fa-house-chimney-window"></i>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="site-footer" id="contact">
+
+    <div class="container footer-main">
+
+
+      <!-- BRAND COLUMN -->
+      <div class="footer-brand-column">
+
+        <a
+          class="brand footer-brand"
+          href="index.html"
+          aria-label="Stackly home"
+        >
+
+          <img
+            src="assets/stackly%20logo.webp"
+            class="brand-logo"
+            alt="Stackly"
+          >
+
+          <span class="brand-tagline">
+            Your Dream Home. Your Next Chapter.
+          </span>
+
+        </a>
+
+
+        <p>
+          Helping you discover a place that feels like home.
+          Explore thoughtfully selected properties and take
+          the next step with confidence.
+        </p>
+
+
+        <!-- Social media -->
+        <div class="social-links" aria-label="Social media">
+
+          <a
+            href="https://www.facebook.com/"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+
+          <a
+            href="https://www.instagram.com/"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+
+          <a
+            href="https://www.youtube.com/"
+            aria-label="YouTube"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- QUICK LINKS -->
+      <div class="footer-column">
+
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+
+        <a href="properties.html">Properties</a>
+
+        <a href="index.html#about">About</a>
+
+        <a href="index.html#categories">Services</a>
+
+        <a href="index.html#contact">Contact</a>
+
+      </div>
+
+
+
+      <!-- ACCOUNT LINKS -->
+      <div class="footer-column">
+
+        <h3>Your Account</h3>
+
+        <a href="login.html">Login</a>
+
+        <a href="signup.html">Signup</a>
+
+        <a href="my-bookings.html">My Bookings</a>
+
+        <a href="properties.html">Browse Properties</a>
+
+      </div>
+
+
+
+      <!-- CONTACT + NEWSLETTER -->
+      <div class="footer-column footer-contact">
+
+        <h3>Get in Touch</h3>
+
+
+        <p>
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          <span>Coimbatore, Tamil Nadu, India</span>
+        </p>
+
+
+        <p>
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <span>hello@stackly.example</span>
+        </p>
+
+
+        <p>
+          <i class="fa-solid fa-clock" aria-hidden="true"></i>
+          <span>Monday – Saturday, 9 AM – 6 PM</span>
+        </p>
+
+
+        <!-- Newsletter subscription -->
+        <form class="footer-subscribe" id="footerSubscribe">
+
+          <label for="subscribeEmail">
+            Get Property Updates
+          </label>
+
+          <div class="subscribe-field">
+
+            <input
+              id="subscribeEmail"
+              name="email"
+              type="email"
+              placeholder="Your email address"
+              autocomplete="email"
+              required
+            >
+
+            <button
+              type="submit"
+              aria-label="Subscribe"
+            >
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+    <div class="container footer-bottom">
+
+      <p>
+        &copy; <span id="currentYear"></span>
+        Stackly. All rights reserved.
+      </p>
+
+      <div>
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms of Use
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================
+       TOAST NOTIFICATIONS
+  ========================================== -->
+
+  <div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+
+
+  <!-- =========================================
+       BACK TO TOP
+  ========================================== -->
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+
+</body>
+</html>
+

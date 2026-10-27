@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#101b35">
+    <meta
+        name="description"
+        content="Book a property viewing with HomeNest and review your estimated rental costs."
+    >
+
+    <title>Book a Viewing | HomeNest</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Existing shared theme: do not modify -->
+    <link rel="stylesheet" href="shared-theme.css">
+    <link rel="stylesheet" href="booking.css">
+
+    <script src="booking.js" defer></script>
+</head>
+
+<body class="booking-page is-loading">
+
+    <!-- EXISTING STYLE PRELOADER -->
+    <div
+        class="preloader"
+        id="pageLoader"
+        role="status"
+        aria-label="Loading HomeNest"
+    >
+        <div class="loader-content">
+            <div class="loader-logo-wrap">
+                <img
+                    src="assets/stackly%20logo.webp"
+                    class="loader-logo"
+                    alt="HomeNest logo"
+                >
+            </div>
+
+            <p class="loader-quote">
+                Your Dream Home. Your Next Chapter.
+            </p>
+
+            <div class="loader-track" aria-hidden="true">
+                <span></span>
+            </div>
+
+            <p class="loader-message">Preparing your booking...</p>
+        </div>
+    </div>
+
+    <!-- BACKGROUND EFFECTS -->
+    <div class="background-effects" aria-hidden="true">
+        <span class="glow glow-one"></span>
+        <span class="glow glow-two"></span>
+        <span class="glow glow-three"></span>
+    </div>
+
+    <!-- =========================================
+     HEADER — MATCH PROPERTIES PAGE
+========================================== -->
+
+<header class="site-header" id="siteHeader">
+    <div class="container navbar">
+
+        <!-- Original Stackly Logo -->
+        <a class="brand" href="index.html" aria-label="Stackly home">
+            <img
+                src="assets/stackly%20logo.webp"
+                class="brand-logo"
+                alt="Stackly"
+            >
+            <span class="brand-tagline">
+                Your Dream Home. Your Next Chapter.
+            </span>
+        </a>
+
+        <!-- Mobile Navigation Toggle -->
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="navMenu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+
+    <a class="nav-link" href="index.html">Home</a>
+
+    <a class="nav-link" href="properties.html">Properties</a>
+
+    <a class="nav-link" href="index.html#about">About</a>
+
+    <a class="nav-link" href="index.html#categories">Services</a>
+
+    <a class="nav-link" href="index.html#contact">Contact</a>
+
+    <div class="nav-actions">
+
+        <a
+class="favorite-nav-link"
+href="favorites.html"
+data-favorites-link
+aria-label="View favourites"
+title="Favourites"
+
+>
+
+
+<i class="fa-regular fa-heart" aria-hidden="true"></i>
+
+
+
+<span
+    class="favorite-count"
+    id="favoriteCount"
+    data-favorite-count
+>0</span>
+
+
+</a>
+
+
+        <a class="login-link" href="login.html">Login</a>
+
+        <a class="btn btn-primary nav-cta" href="signup.html">
+            Signup
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+
+    </div>
+</nav>
+    </div>
+</header>
+
+    <main>
+
+        <!-- INTRO -->
+        <section class="booking-hero">
+            <div class="container">
+
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="properties.html">Properties</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Book a Viewing</span>
+                </div>
+
+                <div class="booking-hero-content">
+                    <span class="booking-eyebrow">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        YOUR NEXT CHAPTER STARTS HERE
+                    </span>
+
+                    <h1>
+                        Book your property
+                        <span>viewing.</span>
+                    </h1>
+
+                    <p>
+                        Found a place you love? Schedule a convenient viewing,
+                        explore the property, and review the estimated rental
+                        costs before confirming your request.
+                    </p>
+
+                    <div class="booking-highlights">
+                        <span>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Simple booking process
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Transparent cost estimate
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-circle-check"></i>
+                            No online payment collected
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BOOKING CONTENT -->
+        <section class="booking-section">
+            <div class="container">
+
+                <!-- PROGRESS -->
+                <div class="booking-progress" aria-label="Booking progress">
+                    <div class="progress-step active" data-progress-step="1">
+                        <span class="progress-number">1</span>
+                        <div>
+                            <strong>Viewing Details</strong>
+                            <small>Choose your schedule</small>
+                        </div>
+                    </div>
+
+                    <span class="progress-line"></span>
+
+                    <div class="progress-step" data-progress-step="2">
+                        <span class="progress-number">2</span>
+                        <div>
+                            <strong>Review Costs</strong>
+                            <small>Rental estimate</small>
+                        </div>
+                    </div>
+
+                    <span class="progress-line"></span>
+
+                    <div class="progress-step" data-progress-step="3">
+                        <span class="progress-number">3</span>
+                        <div>
+                            <strong>Confirmation</strong>
+                            <small>Save your request</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-layout">
+
+                    <!-- LEFT COLUMN -->
+                    <div class="booking-main-column">
+
+                        <!-- VIEWING FORM -->
+                        <section class="booking-card" id="bookingSection">
+
+                            <div class="booking-card-heading">
+                                <span class="section-icon">
+                                    <i class="fa-regular fa-calendar-check"></i>
+                                </span>
+
+                                <div>
+                                    <h2>Schedule a Viewing</h2>
+                                    <p>
+                                        Enter your details and preferred
+                                        viewing schedule.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <form id="bookingForm" novalidate>
+
+                                <h3 class="form-section-title">
+                                    <i class="fa-regular fa-user"></i>
+                                    Personal Information
+                                </h3>
+
+                                <div class="form-grid">
+
+                                    <div class="form-field">
+                                        <label for="fullName">
+                                            Full Name <span>*</span>
+                                        </label>
+
+                                        <div class="input-wrap">
+                                            <i class="fa-regular fa-user"></i>
+                                            <input
+                                                type="text"
+                                                id="fullName"
+                                                name="fullName"
+                                                placeholder="Enter your full name"
+                                                autocomplete="name"
+                                                required
+                                            >
+                                        </div>
+
+                                        <small class="field-error" id="fullNameError"></small>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label for="email">
+                                            Email Address <span>*</span>
+                                        </label>
+
+                                        <div class="input-wrap">
+                                            <i class="fa-regular fa-envelope"></i>
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                placeholder="you@example.com"
+                                                autocomplete="email"
+                                                required
+                                            >
+                                        </div>
+
+                                        <small class="field-error" id="emailError"></small>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label for="phone">
+                                            Phone Number <span>*</span>
+                                        </label>
+
+                                        <div class="input-wrap">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <input
+                                                type="tel"
+                                                id="phone"
+                                                name="phone"
+                                                placeholder="Enter phone number"
+                                                autocomplete="tel"
+                                                required
+                                            >
+                                        </div>
+
+                                        <small class="field-error" id="phoneError"></small>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label for="viewers">
+                                            Number of Visitors <span>*</span>
+                                        </label>
+
+                                        <div class="input-wrap">
+                                            <i class="fa-solid fa-users"></i>
+                                            <select id="viewers" name="viewers" required>
+                                                <option value="">Select visitors</option>
+                                                <option value="1">1 visitor</option>
+                                                <option value="2">2 visitors</option>
+                                                <option value="3">3 visitors</option>
+                                                <option value="4">4 visitors</option>
+                                                <option value="5">5 visitors</option>
+                                            </select>
+                                        </div>
+
+                                        <small class="field-error" id="viewersError"></small>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-divider"></div>
+
+                                <h3 class="form-section-title">
+                                    <i class="fa-regular fa-clock"></i>
+                                    Viewing Schedule
+                                </h3>
+
+                                <div class="form-grid">
+
+                                    <div class="form-field">
+                                        <label for="viewingDate">
+                                            Preferred Date <span>*</span>
+                                        </label>
+
+                                        <div class="input-wrap">
+                                            <i class="fa-regular fa-calendar"></i>
+                                            <input
+                                                type="date"
+                                                id="viewingDate"
+                                                name="viewingDate"
+                                                required
+                                            >
+                                        </div>
+
+                                        <small class="field-error" id="viewingDateError"></small>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label for="viewingTime">
+                                            Preferred Time <span>*</span>
+                                        </label>
+
+                                        <div class="input-wrap">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <select id="viewingTime" name="viewingTime" required>
+                                                <option value="">Select a time</option>
+                                                <option value="09:00">09:00 AM</option>
+                                                <option value="10:00">10:00 AM</option>
+                                                <option value="11:00">11:00 AM</option>
+                                                <option value="12:00">12:00 PM</option>
+                                                <option value="13:00">01:00 PM</option>
+                                                <option value="14:00">02:00 PM</option>
+                                                <option value="15:00">03:00 PM</option>
+                                                <option value="16:00">04:00 PM</option>
+                                                <option value="17:00">05:00 PM</option>
+                                            </select>
+                                        </div>
+
+                                        <small class="field-error" id="viewingTimeError"></small>
+                                    </div>
+
+                                    <div class="form-field form-field-full">
+                                        <label for="purpose">
+                                            Purpose of Visit <span>*</span>
+                                        </label>
+
+                                        <div class="input-wrap">
+                                            <i class="fa-solid fa-house"></i>
+                                            <select id="purpose" name="purpose" required>
+                                                <option value="">Select your purpose</option>
+                                                <option value="Renting">Renting this property</option>
+                                                <option value="Buying">Buying this property</option>
+                                                <option value="Investment">Investment opportunity</option>
+                                                <option value="Exploring">Just exploring</option>
+                                            </select>
+                                        </div>
+
+                                        <small class="field-error" id="purposeError"></small>
+                                    </div>
+
+                                    <div class="form-field form-field-full">
+                                        <label for="message">
+                                            Additional Message
+                                            <span class="optional-label">(Optional)</span>
+                                        </label>
+
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows="4"
+                                            maxlength="1000"
+                                            placeholder="Any questions or special requirements?"
+                                        ></textarea>
+
+                                        <div class="textarea-footer">
+                                            <small>
+                                                Share any details that may help us prepare.
+                                            </small>
+                                            <small>
+                                                <span id="messageCount">0</span>/1000
+                                            </small>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="terms-field">
+                                    <label class="checkbox-label" for="agreeTerms">
+                                        <input
+                                            type="checkbox"
+                                            id="agreeTerms"
+                                            name="agreeTerms"
+                                            required
+                                        >
+
+                                        <span>
+                                            I confirm that the information provided
+                                            is correct and agree to be contacted
+                                            about this viewing request.
+                                        </span>
+                                    </label>
+
+                                    <small class="field-error" id="agreeTermsError"></small>
+                                </div>
+
+                                <div class="form-actions">
+                                    <a href="properties.html" class="btn btn-secondary">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Back to Properties
+                                    </a>
+
+                                    <button type="submit" class="btn btn-primary" id="submitBooking">
+                                        Review Rental Costs
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+
+                            </form>
+                        </section>
+
+                        <!-- PAYMENT REVIEW -->
+                        <section
+                            class="booking-card payment-section"
+                            id="paymentSection"
+                            hidden
+                        >
+                            <div class="booking-card-heading">
+                                <span class="section-icon">
+                                    <i class="fa-solid fa-receipt"></i>
+                                </span>
+
+                                <div>
+                                    <h2>Review Rental Costs</h2>
+                                    <p>
+                                        Review the estimated rental breakdown
+                                        before saving your viewing request.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="review-property">
+                                <img
+                                    src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=500&q=80"
+                                    alt="Selected property"
+                                    id="paymentPropertyImage"
+                                >
+
+                                <div>
+                                    <span class="property-type-tag" id="paymentPropertyType">
+                                        Selected Property
+                                    </span>
+
+                                    <h3 id="paymentPropertyName">Property Name</h3>
+
+                                    <p>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span id="paymentPropertyLocation">Property location</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="payment-details-list">
+                                <div class="payment-detail-row">
+                                    <span>Monthly Rent</span>
+                                    <strong id="monthlyRentAmount">₹25,000</strong>
+                                </div>
+
+                                <div class="payment-detail-row">
+                                    <span>
+                                        Security Deposit
+                                        <small id="depositMonthsLabel">(10 months)</small>
+                                    </span>
+
+                                    <strong id="depositAmount">₹2,50,000</strong>
+                                </div>
+
+                                <div class="payment-detail-row">
+                                    <span>Service Fee</span>
+                                    <strong id="serviceFeeAmount">₹5,000</strong>
+                                </div>
+
+                                <div class="payment-detail-row payment-total-row">
+                                    <div>
+                                        <span>Estimated Total Payable</span>
+                                        <small>
+                                            First month's rent + deposit + service fee
+                                        </small>
+                                    </div>
+
+                                    <strong id="totalPayable">₹2,80,000</strong>
+                                </div>
+                            </div>
+
+                            <div class="payment-notice">
+                                <i class="fa-solid fa-circle-info"></i>
+
+                                <p>
+                                    This is an estimate for review only.
+                                    Confirming this form saves a viewing request;
+                                    it does not collect money or process a payment.
+                                    Actual rental terms should be confirmed with
+                                    the property representative.
+                                </p>
+                            </div>
+
+                            <div class="viewing-review">
+                                <h3>
+                                    <i class="fa-regular fa-calendar-check"></i>
+                                    Your Viewing Details
+                                </h3>
+
+                                <div class="payment-detail-row">
+                                    <span>Applicant</span>
+                                    <strong id="reviewFullName">—</strong>
+                                </div>
+
+                                <div class="payment-detail-row">
+                                    <span>Viewing Date</span>
+                                    <strong id="paymentViewingDate">—</strong>
+                                </div>
+
+                                <div class="payment-detail-row">
+                                    <span>Viewing Time</span>
+                                    <strong id="paymentViewingTime">—</strong>
+                                </div>
+
+                                <div class="payment-detail-row">
+                                    <span>Visitors</span>
+                                    <strong id="paymentVisitors">—</strong>
+                                </div>
+                            </div>
+
+                            <div class="form-actions payment-actions">
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    id="backToBooking"
+                                >
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                    Edit Details
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary"
+                                    id="confirmBooking"
+                                >
+                                    Confirm Viewing Request
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <!-- RIGHT SIDEBAR -->
+                    <aside class="booking-sidebar">
+
+                        <section class="property-summary-card">
+
+                            <div class="sidebar-card-heading">
+                                <h2>Your Selected Property</h2>
+
+                                <span class="verified-badge">
+                                    <i class="fa-solid fa-check"></i>
+                                    Selected
+                                </span>
+                            </div>
+
+                            <div class="summary-image-wrap">
+                                <img
+                                    src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=85"
+                                    alt="Selected property"
+                                    id="summaryImage"
+                                >
+
+                                <span class="summary-image-label" id="summaryType">
+                                    Villa
+                                </span>
+                            </div>
+
+                            <div class="property-summary-content">
+                                <h3 id="summaryTitle">3BHK Villa</h3>
+
+                                <p class="summary-location">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span id="summaryLocation">Whitefield, Bangalore</span>
+                                </p>
+
+                                <div class="summary-price">
+                                    <strong id="summaryPrice">₹25,000</strong>
+                                    <span>/ month</span>
+                                </div>
+
+                                <div class="property-features">
+                                    <span>
+                                        <i class="fa-solid fa-bed"></i>
+                                        <strong id="summaryBedrooms">3</strong> Beds
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-bath"></i>
+                                        <strong id="summaryBathrooms">3</strong> Baths
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-ruler-combined"></i>
+                                        <strong id="summaryArea">2,400</strong> sq.ft.
+                                    </span>
+                                </div>
+
+                                <a
+                                    href="properties.html"
+                                    class="summary-property-link"
+                                    id="viewPropertyLink"
+                                >
+                                    Explore Properties
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+
+                                <a
+                                    href="properties.html"
+                                    class="change-property-link"
+                                    id="changePropertyLink"
+                                >
+                                    <i class="fa-solid fa-rotate"></i>
+                                    Change Property
+                                </a>
+                            </div>
+                        </section>
+
+                        <!-- RENTAL ESTIMATE -->
+                        <section class="rental-estimate-card">
+                            <div class="sidebar-card-heading">
+                                <h2>
+                                    <i class="fa-solid fa-wallet"></i>
+                                    Rental Estimate
+                                </h2>
+                            </div>
+
+                            <div class="estimate-row">
+                                <span>Monthly Rent</span>
+                                <strong id="sidebarMonthlyRent">₹25,000</strong>
+                            </div>
+
+                            <div class="estimate-row">
+                                <span>Security Deposit</span>
+                                <strong id="sidebarDeposit">₹2,50,000</strong>
+                            </div>
+
+                            <div class="estimate-row">
+                                <span>Service Fee</span>
+                                <strong id="sidebarServiceFee">₹5,000</strong>
+                            </div>
+
+                            <div class="estimate-total">
+                                <span>Estimated Total</span>
+                                <strong id="sidebarTotal">₹2,80,000</strong>
+                            </div>
+
+                            <p class="estimate-disclaimer">
+                                <i class="fa-solid fa-circle-info"></i>
+                                Estimate only. No payment is collected here.
+                            </p>
+                        </section>
+
+                        <!-- NEXT STEPS -->
+                        <section class="next-steps-card">
+                            <span class="sidebar-icon">
+                                <i class="fa-solid fa-list-check"></i>
+                            </span>
+
+                            <h3>What Happens Next?</h3>
+
+                            <div class="next-step-item">
+                                <span>1</span>
+                                <p>Submit your preferred viewing details.</p>
+                            </div>
+
+                            <div class="next-step-item">
+                                <span>2</span>
+                                <p>Review the estimated rental costs.</p>
+                            </div>
+
+                            <div class="next-step-item">
+                                <span>3</span>
+                                <p>Save the request and await confirmation.</p>
+                            </div>
+                        </section>
+
+                        <!-- SUPPORT -->
+                        <section class="booking-support-card">
+                            <span class="sidebar-icon">
+                                <i class="fa-regular fa-comments"></i>
+                            </span>
+
+                            <h3>Need Help?</h3>
+
+                            <p>
+                                Have questions about the property or your
+                                viewing schedule? Our team can help.
+                            </p>
+
+                            <a href="index.html#contact">
+                                Contact Our Team
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </section>
+
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CONFIRMATION MODAL -->
+    <div
+        class="confirmation-overlay"
+        id="confirmationOverlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirmationTitle"
+        hidden
+    >
+        <div class="confirmation-modal">
+
+            <button
+                type="button"
+                class="confirmation-close"
+                id="confirmationClose"
+                aria-label="Close confirmation"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="confirmation-success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <span class="booking-eyebrow">REQUEST SAVED</span>
+
+            <h2 id="confirmationTitle">Your viewing request is saved!</h2>
+
+            <p class="confirmation-description">
+                Thank you for choosing HomeNest. Your request has been
+                saved in this browser. This demo does not send a request
+                to a server or collect a payment.
+            </p>
+
+            <div class="confirmation-reference">
+                <span>Booking Reference</span>
+                <strong id="bookingReference">HN-000000</strong>
+            </div>
+
+            <div class="confirmation-details">
+                <div>
+                    <span>Property</span>
+                    <strong id="confirmationProperty">Selected Property</strong>
+                </div>
+
+                <div>
+                    <span>Viewing Date</span>
+                    <strong id="confirmationDate">—</strong>
+                </div>
+
+                <div>
+                    <span>Viewing Time</span>
+                    <strong id="confirmationTime">—</strong>
+                </div>
+
+                <div>
+                    <span>Rental Estimate</span>
+                    <strong id="confirmationTotal">—</strong>
+                </div>
+            </div>
+
+            <p class="confirmation-payment-note">
+                <i class="fa-solid fa-shield-halved"></i>
+                No payment has been processed.
+            </p>
+
+            <div class="confirmation-actions">
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="confirmationDone"
+                >
+                    Done
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+                <a href="my-bookings.html" class="btn btn-secondary">
+                    My Bookings
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div
+        class="booking-toast"
+        id="toastMessage"
+        role="status"
+        aria-live="polite"
+    >
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastText">Booking updated.</span>
+    </div>
+
+    <!-- =========================================
+     FOOTER — MATCH PROPERTIES PAGE
+========================================== -->
+
+<footer class="site-footer" id="contact">
+
+    <div class="container footer-main">
+
+        <!-- Brand Column -->
+        <div class="footer-brand-column">
+
+            <a
+                class="brand footer-brand"
+                href="index.html"
+                aria-label="Stackly home"
+            >
+                <img
+                    src="assets/stackly%20logo.webp"
+                    class="brand-logo"
+                    alt="Stackly"
+                >
+
+                <span class="brand-tagline">
+                    Your Dream Home. Your Next Chapter.
+                </span>
+            </a>
+
+            <p>
+                Helping you discover a place that feels like home.
+                Explore thoughtfully selected properties and take
+                the next step with confidence.
+            </p>
+
+            <!-- Social Links -->
+            <div class="social-links" aria-label="Social media">
+
+                <a
+                    href="https://www.facebook.com/"
+                    aria-label="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/"
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+
+                <a
+                    href="https://www.youtube.com/"
+                    aria-label="YouTube"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+        <a href="properties.html">Properties</a>
+
+        <a href="index.html#about">About</a>
+
+        <a href="index.html#categories">Services</a>
+
+        <a href="index.html#contact">Contact</a>
+
+        </div>
+
+        <!-- Account Links -->
+        <div class="footer-column">
+
+            <h3>Your Account</h3>
+
+            <a href="login.html">Login</a>
+            <a href="signup.html">Create Account</a>
+            <a href="my-bookings.html">My Bookings</a>
+            <a href="properties.html">Browse Properties</a>
+
+        </div>
+
+        <!-- Contact and Newsletter -->
+        <div class="footer-column footer-contact">
+
+            <h3>Get in Touch</h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span>Coimbatore, Tamil Nadu, India</span>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span>hello@stackly.example</span>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                <span>Monday – Saturday, 9 AM – 6 PM</span>
+            </p>
+
+            <!-- Newsletter -->
+            <form class="footer-subscribe" id="footerSubscribe">
+
+                <label for="subscribeEmail">
+                    Get property updates
+                </label>
+
+                <div class="subscribe-field">
+
+                    <input
+                        id="subscribeEmail"
+                        name="email"
+                        type="email"
+                        placeholder="Your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <button type="submit" aria-label="Subscribe">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="container footer-bottom">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            Stackly. All rights reserved.
+        </p>
+
+        <div>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+        </div>
+
+    </div>
+
+</footer>
+    <button
+        type="button"
+        id="backToTop"
+        class="back-to-top"
+        aria-label="Back to top"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+</body>
+</html>

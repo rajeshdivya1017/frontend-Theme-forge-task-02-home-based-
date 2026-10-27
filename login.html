@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101c3a">
+
+    <title>Login | HomeNest</title>
+    <meta name="description" content="Log in to your HomeNest account to manage your property bookings and explore your saved homes.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader" aria-label="Loading page">
+        <div class="loader-content">
+            <img src="assets/stackly logo.webp" alt="Stackly Technologies" class="loader-brand-image">
+            <div class="loader-track"><span></span></div>
+            <p>Welcome back home...</p>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="login-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo" aria-label="Stackly home">
+                <img src="assets/stackly logo.webp" alt="Stackly Technologies" class="brand-image">
+            </a>
+
+            <a href="index.html" class="back-home">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="login-main">
+
+        <!-- LEFT VISUAL -->
+        <section class="login-visual">
+            <div class="visual-overlay"></div>
+
+            <div class="visual-content">
+                <span class="visual-badge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    YOUR HOME JOURNEY
+                </span>
+
+                <h1>
+                    Welcome back to
+                    <span>your next chapter.</span>
+                </h1>
+
+                <p class="visual-description">
+                    Your dream home is closer than you think.
+                    Sign in to continue exploring properties,
+                    revisit your favourites, and manage your viewings.
+                </p>
+
+                <div class="visual-features">
+                    <div class="visual-feature">
+                        <span class="feature-icon"><i class="fa-solid fa-heart"></i></span>
+                        <div>
+                            <h3>Your Favourite Homes</h3>
+                            <p>Keep track of the properties you love.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-feature">
+                        <span class="feature-icon"><i class="fa-solid fa-calendar-check"></i></span>
+                        <div>
+                            <h3>Easy Viewing Management</h3>
+                            <p>Stay organised with your property visits.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-feature">
+                        <span class="feature-icon"><i class="fa-solid fa-house-circle-check"></i></span>
+                        <div>
+                            <h3>Find Your Place</h3>
+                            <p>Continue your journey towards a home of your own.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visual-bottom">
+                    <span class="visual-bottom-line"></span>
+                    <p>Find a place. Make it yours.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGIN FORM -->
+        <section class="login-form-section">
+            <div class="login-form-wrapper">
+
+                <div class="form-heading">
+                    <div class="mobile-form-logo">
+                        <img src="assets/stackly logo.webp" alt="Stackly Technologies" class="mobile-brand-image">
+                    </div>
+
+                    <span class="form-eyebrow">YOUR ACCOUNT</span>
+                    <h2>Welcome <span>back!</span></h2>
+                    <p>Enter your account details to continue.</p>
+                </div>
+
+                <form id="loginForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                            <input type="email" id="email" name="email"
+                                   placeholder="you@example.com" autocomplete="email"
+                                   maxlength="254" required>
+                        </div>
+                        <small class="field-error" id="emailError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-row">
+                            <label for="password">Password</label>
+                            <a href="#" id="forgotPasswordLink" class="forgot-password">Forgot password?</a>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="password" name="password"
+                                   placeholder="Enter your password"
+                                   autocomplete="current-password"
+                                   minlength="8" maxlength="128" required>
+
+                            <button type="button" class="password-toggle"
+                                    data-target="password"
+                                    aria-label="Show password" aria-pressed="false">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <small class="field-error" id="passwordError"></small>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-label" for="rememberMe">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span class="custom-checkbox"></span>
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+
+                    <div class="form-message" id="formMessage"
+                         role="status" aria-live="polite" hidden></div>
+
+                    <button type="submit" class="login-submit" id="loginSubmit">
+                        <span class="button-text">Sign In</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <div class="form-divider">
+                        <span>YOUR NEXT CHAPTER STARTS HERE</span>
+                    </div>
+
+                    <p class="signup-prompt">
+                        Don't have an account?
+                        <a href="signup.html">Create an account</a>
+                    </p>
+                </form>
+
+                <div class="security-note">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <p>Your account security matters. Never share your password with anyone.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- STACKLY FOOTER -->
+    <footer class="login-footer">
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo-link">
+                <img src="assets/stackly logo.webp" alt="Stackly Technologies" class="footer-logo">
+            </a>
+            <p class="footer-quote">Innovating Today for a Smarter Tomorrow.</p>
+
+            <div class="footer-socials" aria-label="Social media">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Stackly Technologies. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
+

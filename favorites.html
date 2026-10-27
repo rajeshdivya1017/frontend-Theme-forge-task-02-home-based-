@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<meta
+    name="theme-color"
+    content="#101d3a"
+>
+
+<meta
+    name="description"
+    content="View and manage your saved properties with Stackly."
+>
+
+<title>My Favourites | Stackly</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- Existing website styles -->
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="favorites.css">
+
+<!-- Existing favourites functionality -->
+<script src="favorites.js" defer></script>
+```
+
+</head>
+
+<body class="favorites-page">
+
+```
+<!-- =========================================
+     EXISTING PRELOADER
+========================================== -->
+
+<div
+    id="preloader"
+    class="preloader"
+    aria-label="Loading Stackly"
+>
+    <div class="preloader-content">
+
+        <div class="preloader-icon">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+        </div>
+
+        <p>Stackly</p>
+
+        <span>Finding your favourite spaces...</span>
+
+    </div>
+</div>
+
+
+<!-- =========================================
+     STACKLY HEADER
+     Matching homepage header structure
+========================================== -->
+
+<header class="site-header" id="siteHeader">
+
+    <div class="container navbar">
+
+        <!-- Original Stackly logo -->
+
+        <a
+            class="brand"
+            href="index.html"
+            aria-label="Stackly home"
+        >
+            <img
+                src="assets/stackly%20logo.webp"
+                class="brand-logo"
+                alt="Stackly"
+            >
+
+            <span class="brand-tagline">
+                Your Dream Home. Your Next Chapter.
+            </span>
+        </a>
+
+
+        <!-- Mobile navigation toggle -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="navMenu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <!-- Main navigation -->
+
+        <nav
+            class="nav-menu"
+            id="navMenu"
+            aria-label="Main navigation"
+        >
+
+            <a
+                class="nav-link"
+                href="index.html"
+            >
+                Home
+            </a>
+
+            <a
+                class="nav-link"
+                href="properties.html"
+            >
+                Properties
+            </a>
+
+            <a
+                class="nav-link"
+                href="index.html#about"
+            >
+                About
+            </a>
+
+            <a
+                class="nav-link"
+                href="services.html"
+            >
+                Services
+            </a>
+
+            <a
+                class="nav-link"
+                href="index.html#contact"
+            >
+                Contact
+            </a>
+
+
+            <!-- Navigation actions -->
+
+            <div class="nav-actions">
+
+                <!-- Favourites -->
+
+                <a
+                    class="favorite-nav-link"
+                    href="favorites.html"
+                    data-favorites-link
+                    aria-label="View favourites"
+                    title="Favourites"
+                >
+                    <i
+                        class="fa-regular fa-heart"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span
+                        class="favorite-count"
+                        id="favoriteCount"
+                        data-favorite-count
+                    >0</span>
+                </a>
+
+
+                <!-- Login -->
+
+                <a
+                    class="login-link"
+                    href="login.html"
+                >
+                    Login
+                </a>
+
+
+                <!-- Signup -->
+
+                <a
+                    class="btn btn-primary nav-cta"
+                    href="signup.html"
+                >
+                    Signup
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     MAIN CONTENT
+     Existing favourites page content preserved
+========================================== -->
+
+<main>
+
+    <!-- HERO SECTION -->
+
+    <section class="favorites-hero">
+
+        <div
+            class="favorites-hero-decoration favorites-decoration-one"
+            aria-hidden="true"
+        ></div>
+
+        <div
+            class="favorites-hero-decoration favorites-decoration-two"
+            aria-hidden="true"
+        ></div>
+
+
+        <div class="container favorites-hero-content">
+
+            <span class="favorites-eyebrow">
+                <i
+                    class="fa-solid fa-heart"
+                    aria-hidden="true"
+                ></i>
+
+                YOUR PERSONAL COLLECTION
+            </span>
+
+
+            <h1>
+                Your Favourite
+                <span>Places</span>
+            </h1>
+
+
+            <p>
+                Keep the homes you love in one place.
+                Compare your saved properties and find the one
+                that feels like home.
+            </p>
+
+
+            <div class="favorites-hero-stats">
+
+                <!-- Saved properties count -->
+
+                <div class="favorites-stat">
+
+                    <span class="favorites-stat-icon">
+                        <i
+                            class="fa-solid fa-heart"
+                            aria-hidden="true"
+                        ></i>
+                    </span>
+
+                    <div>
+                        <strong id="heroFavoriteCount">0</strong>
+                        <span>Saved properties</span>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="favorites-stat-divider"
+                    aria-hidden="true"
+                ></div>
+
+
+                <!-- Company information -->
+
+                <div class="favorites-stat">
+
+                    <span class="favorites-stat-icon">
+                        <i
+                            class="fa-solid fa-house"
+                            aria-hidden="true"
+                        ></i>
+                    </span>
+
+                    <div>
+                        <strong>Stackly</strong>
+                        <span>Your next chapter</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FAVOURITES LIST
+    ====================================== -->
+
+    <section class="favorites-section">
+
+        <div class="container">
+
+            <!-- Section heading -->
+
+            <div class="favorites-section-heading">
+
+                <div>
+
+                    <span class="favorites-section-label">
+                        SAVED FOR LATER
+                    </span>
+
+                    <h2>My Favourites</h2>
+
+                    <p>
+                        All the properties you've saved across Stackly.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="properties.html"
+                    class="favorites-browse-link"
+                >
+                    <i
+                        class="fa-solid fa-compass"
+                        aria-hidden="true"
+                    ></i>
+
+                    Explore Properties
+                </a>
+
+            </div>
+
+
+            <!-- FILTER AND SORT -->
+
+            <div
+                class="favorites-toolbar"
+                id="favoritesToolbar"
+                hidden
+            >
+
+                <div class="favorites-results">
+
+                    <i
+                        class="fa-solid fa-heart"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        <strong id="favoritesResultCount">0</strong>
+                        saved properties
+                    </span>
+
+                </div>
+
+
+                <label
+                    class="favorites-sort-label"
+                    for="favoritesSort"
+                >
+
+                    <span>Sort by</span>
+
+                    <select id="favoritesSort">
+
+                        <option value="newest">
+                            Recently saved
+                        </option>
+
+                        <option value="price-low">
+                            Price: Low to High
+                        </option>
+
+                        <option value="price-high">
+                            Price: High to Low
+                        </option>
+
+                        <option value="name">
+                            Property Name
+                        </option>
+
+                    </select>
+
+                </label>
+
+            </div>
+
+
+            <!-- PROPERTY GRID
+                 favorites.js renders saved properties here
+            -->
+
+            <div
+                class="favorites-grid"
+                id="favoritesGrid"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                class="favorites-empty"
+                id="favoritesEmpty"
+                hidden
+            >
+
+                <div class="favorites-empty-illustration">
+
+                    <div class="empty-house-circle">
+                        <i
+                            class="fa-solid fa-house"
+                            aria-hidden="true"
+                        ></i>
+                    </div>
+
+                    <span class="empty-heart empty-heart-one">
+                        <i
+                            class="fa-solid fa-heart"
+                            aria-hidden="true"
+                        ></i>
+                    </span>
+
+                    <span class="empty-heart empty-heart-two">
+                        <i
+                            class="fa-regular fa-heart"
+                            aria-hidden="true"
+                        ></i>
+                    </span>
+
+                </div>
+
+
+                <span class="favorites-empty-label">
+                    YOUR COLLECTION STARTS HERE
+                </span>
+
+
+                <h3>No favourites yet</h3>
+
+
+                <p>
+                    Found a home you love? Tap the heart on any property
+                    to save it here. Your collection will stay available
+                    as you explore Stackly.
+                </p>
+
+
+                <a
+                    href="properties.html"
+                    class="favorites-empty-button"
+                >
+                    <i
+                        class="fa-solid fa-magnifying-glass"
+                        aria-hidden="true"
+                    ></i>
+
+                    Discover Properties
+                </a>
+
+            </div>
+
+
+            <!-- BOTTOM CALL TO ACTION -->
+
+            <div class="favorites-bottom-cta">
+
+                <div class="favorites-cta-icon">
+                    <i
+                        class="fa-solid fa-house-chimney-window"
+                        aria-hidden="true"
+                    ></i>
+                </div>
+
+
+                <div class="favorites-cta-copy">
+
+                    <h3>Still looking for the one?</h3>
+
+                    <p>
+                        Explore more homes and save the ones that
+                        match your lifestyle.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="properties.html"
+                    class="favorites-cta-button"
+                >
+                    Browse All Homes
+
+                    <i
+                        class="fa-solid fa-arrow-right"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     STACKLY FOOTER
+     Matching homepage footer structure
+========================================== -->
+
+<footer class="site-footer" id="contact">
+
+    <div class="container footer-main">
+
+        <!-- BRAND COLUMN -->
+
+        <div class="footer-brand-column">
+
+            <a
+                class="brand footer-brand"
+                href="index.html"
+                aria-label="Stackly home"
+            >
+
+                <img
+                    src="assets/stackly%20logo.webp"
+                    class="brand-logo"
+                    alt="Stackly"
+                >
+
+                <span class="brand-tagline">
+                    Your Dream Home. Your Next Chapter.
+                </span>
+
+            </a>
+
+
+            <p>
+                Helping you discover a place that feels like home.
+                Explore thoughtfully selected properties and take
+                the next step with confidence.
+            </p>
+
+
+            <!-- Social media -->
+
+            <div
+                class="social-links"
+                aria-label="Social media"
+            >
+
+                <a
+                    href="https://www.facebook.com/"
+                    aria-label="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i
+                        class="fa-brands fa-facebook-f"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/"
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i
+                        class="fa-brands fa-instagram"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i
+                        class="fa-brands fa-linkedin-in"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+
+
+                <a
+                    href="https://www.youtube.com/"
+                    aria-label="YouTube"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i
+                        class="fa-brands fa-youtube"
+                        aria-hidden="true"
+                    ></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="properties.html">Properties</a>
+
+            <a href="index.html#about">About</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="index.html#contact">Contact</a>
+
+        </div>
+
+
+        <!-- ACCOUNT LINKS -->
+
+        <div class="footer-column">
+
+            <h3>Your Account</h3>
+
+            <a href="login.html">Login</a>
+
+            <a href="signup.html">Signup</a>
+
+            <a href="my-bookings.html">My Bookings</a>
+
+            <a href="properties.html">Browse Properties</a>
+
+        </div>
+
+
+        <!-- CONTACT AND NEWSLETTER -->
+
+        <div class="footer-column footer-contact">
+
+            <h3>Get in Touch</h3>
+
+
+            <p>
+                <i
+                    class="fa-solid fa-location-dot"
+                    aria-hidden="true"
+                ></i>
+
+                <span>Coimbatore, Tamil Nadu, India</span>
+            </p>
+
+
+            <p>
+                <i
+                    class="fa-solid fa-envelope"
+                    aria-hidden="true"
+                ></i>
+
+                <span>hello@stackly.example</span>
+            </p>
+
+
+            <p>
+                <i
+                    class="fa-solid fa-clock"
+                    aria-hidden="true"
+                ></i>
+
+                <span>Monday – Saturday, 9 AM – 6 PM</span>
+            </p>
+
+
+            <!-- Newsletter -->
+
+            <form
+                class="footer-subscribe"
+                id="footerSubscribe"
+            >
+
+                <label for="subscribeEmail">
+                    Get Property Updates
+                </label>
+
+
+                <div class="subscribe-field">
+
+                    <input
+                        id="subscribeEmail"
+                        name="email"
+                        type="email"
+                        placeholder="Your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        aria-label="Subscribe"
+                    >
+                        <i
+                            class="fa-solid fa-arrow-right"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            Stackly. All rights reserved.
+        </p>
+
+
+        <div>
+
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            <a href="terms.html">
+                Terms of Use
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================
+     TOAST NOTIFICATIONS
+========================================== -->
+
+<div
+    id="favoritesToast"
+    class="favorites-toast"
+    role="status"
+    aria-live="polite"
+></div>
+
+
+<!-- =========================================
+     BACK TO TOP
+========================================== -->
+
+<button
+    class="favorites-back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+>
+    <i
+        class="fa-solid fa-arrow-up"
+        aria-hidden="true"
+    ></i>
+</button>
+
+
+</body>
+
+</html>

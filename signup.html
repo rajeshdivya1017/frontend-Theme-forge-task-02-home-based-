@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101c3a">
+
+    <title>Create Account | HomeNest</title>
+    <meta name="description" content="Create your HomeNest account to explore properties and manage your property viewing bookings.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <img src="assets/stackly logo.webp" alt="Stackly" class="loader-brand-image">
+            <div class="loader-spinner"></div>
+            <p>Preparing your account...</p>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="auth-header">
+        <div class="auth-header-container">
+            <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+                <img src="assets/stackly logo.webp" alt="Stackly Technologies" class="brand-image">
+            </a>
+
+            <a href="index.html" class="back-home">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="auth-main">
+
+        <!-- LEFT VISUAL -->
+        <section class="auth-visual">
+            <div class="visual-overlay"></div>
+
+            <div class="visual-content">
+                <span class="visual-label">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    WELCOME TO HOMENEST
+                </span>
+
+                <h1>
+                    Your Dream Home
+                    <span>Starts Here.</span>
+                </h1>
+
+                <p class="visual-description">
+                    Create your account and begin your journey towards
+                    finding a place you'll love to call home.
+                </p>
+
+                <div class="visual-features">
+                    <div class="visual-feature">
+                        <span class="feature-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </span>
+                        <div>
+                            <h3>Discover Properties</h3>
+                            <p>Explore homes that match your lifestyle.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-feature">
+                        <span class="feature-icon">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </span>
+                        <div>
+                            <h3>Book Property Visits</h3>
+                            <p>Plan and manage your viewing appointments.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-feature">
+                        <span class="feature-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </span>
+                        <div>
+                            <h3>Save Your Favorites</h3>
+                            <p>Keep your preferred properties together.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visual-bottom">
+                    <span class="visual-bottom-line"></span>
+                    <p>Find a place. Make it yours.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIGNUP FORM -->
+        <section class="auth-form-section">
+            <div class="auth-card">
+
+                <div class="mobile-brand">
+                    <img src="assets/stackly logo.webp" alt="Stackly Technologies" class="mobile-brand-image">
+                </div>
+
+                <div class="form-heading">
+                    <span class="form-label">CREATE YOUR ACCOUNT</span>
+                    <h2>Join HomeNest</h2>
+                    <p>Enter your details to get started.</p>
+                </div>
+
+                <form id="signupForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user input-icon"></i>
+                            <input type="text" id="fullName" name="fullName"
+                                   placeholder="Enter your full name"
+                                   autocomplete="name" maxlength="80" required>
+                        </div>
+                        <small class="field-error" id="fullNameError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                            <input type="email" id="email" name="email"
+                                   placeholder="you@example.com"
+                                   autocomplete="email" maxlength="254" required>
+                        </div>
+                        <small class="field-error" id="emailError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone input-icon"></i>
+                            <input type="tel" id="phone" name="phone"
+                                   placeholder="Enter your phone number"
+                                   autocomplete="tel" inputmode="tel"
+                                   maxlength="20" required>
+                        </div>
+                        <small class="field-error" id="phoneError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="password" name="password"
+                                   placeholder="Create a strong password"
+                                   autocomplete="new-password"
+                                   minlength="8" maxlength="128" required>
+
+                            <button type="button" class="password-toggle"
+                                    data-target="password"
+                                    aria-label="Show password" aria-pressed="false">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <div class="password-strength">
+                            <div class="strength-track">
+                                <span id="strengthBar"></span>
+                            </div>
+                            <span id="strengthText">Use at least 8 characters.</span>
+                        </div>
+
+                        <small class="field-error" id="passwordError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-shield-halved input-icon"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword"
+                                   placeholder="Re-enter your password"
+                                   autocomplete="new-password"
+                                   minlength="8" maxlength="128" required>
+
+                            <button type="button" class="password-toggle"
+                                    data-target="confirmPassword"
+                                    aria-label="Show confirm password" aria-pressed="false">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <small class="field-error" id="confirmPasswordError"></small>
+                    </div>
+
+                    <div class="terms-group">
+                        <label class="checkbox-label" for="agreeTerms">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                            <span class="custom-checkbox"></span>
+                            <span class="terms-text">
+                                I agree to the <a href="terms.html">Terms of Service</a>
+                                and <a href="privacy.html">Privacy Policy</a>.
+                            </span>
+                        </label>
+                        <small class="field-error" id="agreeTermsError"></small>
+                    </div>
+
+                    <div class="form-message" id="formMessage"
+                         role="status" aria-live="polite" hidden></div>
+
+                    <button type="submit" class="btn btn-primary signup-submit" id="signupSubmit">
+                        <span>Create Account</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <p class="login-prompt">
+                        Already have an account?
+                        <a href="login.html">Sign In</a>
+                    </p>
+                </form>
+
+                <div class="form-security-note">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Your account details should always be protected.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- STACKLY FOOTER -->
+    <footer class="auth-footer">
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo-link">
+                <img src="assets/stackly logo.webp" alt="Stackly Technologies" class="footer-logo">
+            </a>
+            <p class="footer-quote">Innovating Today for a Smarter Tomorrow.</p>
+
+            <div class="footer-socials" aria-label="Social media">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Stackly Technologies. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="signup.js"></script>
+</body>
+</html>
+

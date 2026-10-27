@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Bookings | Stackly</title>
+<meta content="Manage your property bookings with HomeNest." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="my-bookings.css" rel="stylesheet"/><link href="shared-theme.css" rel="stylesheet"/>
+<meta content="#101b35" name="theme-color"/></head>
+<body class="my-bookings-page is-loading"><div aria-hidden="true" class="background-effects">
+<span class="glow glow-one"></span>
+<span class="glow glow-two"></span>
+<span class="glow glow-three"></span>
+</div>
+<!-- PAGE LOADER -->
+<div aria-label="Loading Stackly" class="preloader" id="pageLoader" role="status">
+<div class="loader-content">
+<div class="loader-logo-wrap">
+<img alt="Stackly logo" class="loader-logo" src="assets/stackly%20logo.webp"/>
+</div>
+<p class="loader-quote">
+        Your Dream Home. Your Next Chapter.
+      </p>
+<div aria-hidden="true" class="loader-track">
+<span></span>
+</div>
+<p class="loader-message" id="loaderMessage">
+        Finding your perfect place...
+      </p>
+</div>
+</div>
+<!-- EXISTING HEADER -->
+<header class="site-header" id="siteHeader">
+<div class="container navbar">
+<!-- Original Stackly logo -->
+<a aria-label="Stackly home" class="brand" href="index.html">
+<img alt="Stackly" class="brand-logo" src="assets/stackly%20logo.webp"/>
+<span class="brand-tagline">
+          Your Dream Home. Your Next Chapter.
+        </span>
+</a>
+<!-- Mobile navigation toggle -->
+<button aria-controls="navMenu" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" id="menuToggle" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<!-- Main navigation -->
+<nav aria-label="Main navigation" class="nav-menu" id="navMenu">
+<a class="nav-link" href="index.html">
+          Home
+        </a>
+<a class="nav-link" href="properties.html">
+          Properties
+        </a>
+<a aria-current="page" class="nav-link active" href="my-bookings.html">My Bookings</a><a class="nav-link" href="index.html#about">
+          About
+        </a>
+<a class="nav-link" href="index.html#categories">
+          Services
+        </a>
+<a class="nav-link" href="index.html#contact">
+          Contact
+        </a>
+<!-- Navigation actions -->
+<div class="nav-actions">
+<!-- Favourites -->
+<a
+    aria-label="View favourites"
+    class="favorite-nav-link"
+    href="favorites.html"
+    data-favorites-link
+    title="Favourites"
+>
+    <i aria-hidden="true" class="fa-regular fa-heart"></i>
+    <span
+        class="favorite-count"
+        data-favorite-count
+        aria-live="polite"
+    >0</span>
+</a>
+<!-- Login -->
+<a class="login-link" href="login.html">
+            Login
+          </a>
+<!-- Signup -->
+<a class="btn btn-primary nav-cta" href="signup.html">
+            Signup
+            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</nav>
+</div>
+</header>
+<!-- DASHBOARD MAIN -->
+<main class="dashboard-main">
+<!-- SIDEBAR -->
+<aside class="dashboard-sidebar" id="dashboardSidebar">
+<div class="sidebar-heading">
+<span class="sidebar-section-label">MENU</span>
+</div>
+<nav aria-label="Dashboard navigation" class="sidebar-navigation">
+<a class="sidebar-link" href="my-bookings.html">
+<i class="fa-solid fa-table-columns"></i>
+<span>Dashboard</span>
+</a>
+<a aria-current="page" class="sidebar-link active" href="my-bookings.html">
+<i class="fa-regular fa-calendar-check"></i>
+<span>My Bookings</span>
+<span class="sidebar-link-count" id="sidebarBookingCount">0</span>
+</a>
+<a class="sidebar-link" href="properties.html">
+<i class="fa-regular fa-heart"></i>
+<span>Favorites</span>
+</a>
+<a class="sidebar-link" href="login.html">
+<i class="fa-regular fa-user"></i>
+<span>My Profile</span>
+</a>
+<a class="sidebar-link" href="contact.html">
+<i class="fa-regular fa-comment-dots"></i>
+<span>Messages</span>
+</a>
+</nav>
+<div class="sidebar-divider"></div>
+<div class="sidebar-heading">
+<span class="sidebar-section-label">PREFERENCES</span>
+</div>
+<nav aria-label="Preferences" class="sidebar-navigation">
+<a class="sidebar-link" href="index.html">
+<i class="fa-solid fa-gear"></i>
+<span>Settings</span>
+</a>
+</nav>
+<div class="sidebar-help-card">
+<div class="sidebar-help-icon">
+<i class="fa-solid fa-headset"></i>
+</div>
+<h3>Need Help?</h3>
+<p>Our team is here to help with your property journey.</p>
+<a href="contact.html">
+                    Contact Support
+                    <i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+<a class="sidebar-bottom-link" href="index.html">
+<i class="fa-solid fa-arrow-right-from-bracket"></i>
+<span>Back to Home</span>
+</a>
+</aside>
+<!-- DASHBOARD CONTENT -->
+<section class="dashboard-content">
+<!-- DASHBOARD TOPBAR -->
+<div class="dashboard-topbar">
+<button aria-controls="dashboardSidebar" aria-expanded="false" aria-label="Open dashboard sidebar" class="dashboard-sidebar-toggle" id="dashboardSidebarToggle" type="button">
+<i class="fa-solid fa-bars"></i>
+</button>
+<div class="dashboard-welcome">
+<span class="dashboard-eyebrow">YOUR PERSONAL DASHBOARD</span>
+<h1>My Bookings</h1>
+<p>Track and manage your property bookings.</p>
+</div>
+<div class="dashboard-user-actions">
+<a aria-label="Browse favorite properties" class="dashboard-favorite-button" href="properties.html">
+<i class="fa-regular fa-heart"></i>
+</a>
+<div class="dashboard-profile">
+<div class="profile-avatar">
+<i class="fa-regular fa-user"></i>
+</div>
+<div class="profile-details">
+<strong>HomeNest User</strong>
+<span>Property Explorer</span>
+</div>
+</div>
+</div>
+</div>
+<!-- OVERVIEW CARDS -->
+<section aria-label="Booking overview" class="dashboard-overview">
+<article class="overview-card">
+<div class="overview-card-top">
+<div class="overview-icon icon-blue">
+<i class="fa-regular fa-calendar-check"></i>
+</div>
+<span class="overview-card-label">ALL TIME</span>
+</div>
+<p>Total Bookings</p>
+<h2 id="totalBookings">0</h2>
+<span class="overview-description">Your property appointments</span>
+</article>
+<article class="overview-card">
+<div class="overview-card-top">
+<div class="overview-icon icon-teal">
+<i class="fa-regular fa-clock"></i>
+</div>
+<span class="overview-card-label">SCHEDULED</span>
+</div>
+<p>Upcoming Visits</p>
+<h2 id="upcomingBookings">0</h2>
+<span class="overview-description">Visits yet to take place</span>
+</article>
+<article class="overview-card">
+<div class="overview-card-top">
+<div class="overview-icon icon-purple">
+<i class="fa-solid fa-house-circle-check"></i>
+</div>
+<span class="overview-card-label">FINISHED</span>
+</div>
+<p>Completed Visits</p>
+<h2 id="completedBookings">0</h2>
+<span class="overview-description">Your previous appointments</span>
+</article>
+</section>
+<!-- BOOKINGS SECTION -->
+<section class="my-bookings-section">
+<div class="bookings-section-heading">
+<div>
+<span class="dashboard-eyebrow">PROPERTY ACTIVITY</span>
+<h2>Your Bookings</h2>
+<p>Review your appointments and property details.</p>
+</div>
+<a class="btn btn-primary" href="properties.html">
+<i class="fa-solid fa-plus"></i>
+                        Find a Property
+                    </a>
+</div>
+<!-- BOOKING FILTER TABS -->
+<div class="booking-toolbar">
+<div aria-label="Filter bookings" class="booking-tabs" role="group">
+<button aria-pressed="true" class="booking-tab active" data-filter="all" type="button">
+                            All Bookings
+                            <span id="allCount">0</span>
+</button>
+<button aria-pressed="false" class="booking-tab" data-filter="upcoming" type="button">
+                            Upcoming
+                            <span id="upcomingCount">0</span>
+</button>
+<button aria-pressed="false" class="booking-tab" data-filter="completed" type="button">
+                            Past Bookings
+                            <span id="completedCount">0</span>
+</button>
+</div>
+<div class="booking-search">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search bookings" id="bookingSearch" placeholder="Search properties..." type="search"/>
+</div>
+</div>
+<!-- JAVASCRIPT RENDERS BOOKING CARDS HERE -->
+<div class="booking-list" id="bookingList">
+<div class="bookings-loading">
+<span class="loading-spinner"></span>
+<p>Loading your bookings...</p>
+</div>
+</div>
+<!-- EMPTY STATE -->
+<div class="empty-state" hidden="" id="emptyState">
+<div class="empty-state-icon">
+<i class="fa-regular fa-calendar-xmark"></i>
+</div>
+<h3 id="emptyStateTitle">No bookings yet</h3>
+<p id="emptyStateMessage">
+                        You haven't scheduled any property visits yet.
+                        Explore properties and book your first viewing.
+                    </p>
+<a class="btn btn-primary" href="properties.html">
+<i class="fa-solid fa-house"></i>
+                        Explore Properties
+                    </a>
+</div>
+<!-- INFORMATION NOTICE -->
+<div class="demo-notice">
+<div class="demo-notice-icon">
+<i class="fa-solid fa-circle-info"></i>
+</div>
+<div>
+<h4>About your bookings</h4>
+<p>
+                            This demo stores your booking details in your browser's
+                            local storage. Your bookings are not synced between devices.
+                        </p>
+</div>
+</div>
+</section>
+<!-- BOTTOM CTA -->
+<section class="booking-cta-section">
+<div class="cta-icon">
+<i class="fa-solid fa-house-chimney-window"></i>
+</div>
+<div class="cta-text">
+<h2>Still looking for your dream home?</h2>
+<p>Discover more properties and schedule your next viewing.</p>
+</div>
+<a class="btn btn-light" href="properties.html">
+                    Explore Properties
+                    <i class="fa-solid fa-arrow-right"></i>
+</a>
+</section>
+</section>
+</main>
+<!-- MOBILE SIDEBAR OVERLAY -->
+<div class="dashboard-overlay" id="dashboardOverlay"></div>
+<!-- CANCEL BOOKING MODAL -->
+<div aria-hidden="true" class="confirmation-overlay" id="cancelModal">
+<div aria-labelledby="cancelModalTitle" aria-modal="true" class="confirmation-modal" role="dialog">
+<div class="confirmation-icon">
+<i class="fa-solid fa-calendar-xmark"></i>
+</div>
+<h3 id="cancelModalTitle">Remove This Booking?</h3>
+<p>
+                Are you sure you want to remove this booking from your list?
+                This action cannot be undone.
+            </p>
+<div class="confirmation-actions">
+<button class="btn btn-outline" id="keepBookingBtn" type="button">
+                    Keep Booking
+                </button>
+<button class="btn btn-danger" id="confirmCancelBtn" type="button">
+                    Yes, Remove
+                </button>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATIONS -->
+<div aria-live="polite" class="toast-container" id="toastContainer"></div>
+<!-- EXISTING FOOTER -->
+<footer class="site-footer" id="contact">
+<div class="container footer-main">
+<!-- BRAND COLUMN -->
+<div class="footer-brand-column">
+<a aria-label="Stackly home" class="brand footer-brand" href="index.html">
+<img alt="Stackly" class="brand-logo" src="assets/stackly%20logo.webp"/>
+<span class="brand-tagline">
+            Your Dream Home. Your Next Chapter.
+          </span>
+</a>
+<p>
+          Helping you discover a place that feels like home.
+          Explore thoughtfully selected properties and take
+          the next step with confidence.
+        </p>
+<!-- Social media -->
+<div aria-label="Social media" class="social-links">
+<a aria-label="Facebook" href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-facebook-f"></i>
+</a>
+<a aria-label="Instagram" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-instagram"></i>
+</a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-linkedin-in"></i>
+</a>
+<a aria-label="YouTube" href="https://www.youtube.com/" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-youtube"></i>
+</a>
+</div>
+</div>
+<!-- QUICK LINKS -->
+<div class="footer-column">
+<h3>Quick Links</h3>
+<a href="index.html">Home</a>
+
+        <a href="properties.html">Properties</a>
+
+        <a href="index.html#about">About</a>
+
+        <a href="index.html#categories">Services</a>
+
+        <a href="index.html#contact">Contact</a>
+</div>
+<!-- ACCOUNT LINKS -->
+<div class="footer-column">
+<h3>Your Account</h3>
+<a href="login.html">Login</a>
+<a href="signup.html">Signup</a>
+<a href="my-bookings.html">My Bookings</a>
+<a href="properties.html">Browse Properties</a>
+</div>
+<!-- CONTACT + NEWSLETTER -->
+<div class="footer-column footer-contact">
+<h3>Get in Touch</h3>
+<p>
+<i aria-hidden="true" class="fa-solid fa-location-dot"></i>
+<span>Coimbatore, Tamil Nadu, India</span>
+</p>
+<p>
+<i aria-hidden="true" class="fa-solid fa-envelope"></i>
+<span>hello@stackly.example</span>
+</p>
+<p>
+<i aria-hidden="true" class="fa-solid fa-clock"></i>
+<span>Monday – Saturday, 9 AM – 6 PM</span>
+</p>
+<!-- Newsletter subscription -->
+<form class="footer-subscribe" id="footerSubscribe">
+<label for="subscribeEmail">
+            Get Property Updates
+          </label>
+<div class="subscribe-field">
+<input autocomplete="email" id="subscribeEmail" name="email" placeholder="Your email address" required="" type="email"/>
+<button aria-label="Subscribe" type="submit">
+<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- FOOTER BOTTOM -->
+<div class="container footer-bottom">
+<p>
+        © <span id="currentYear"></span>
+        Stackly. All rights reserved.
+      </p>
+<div>
+<a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+<a href="terms.html">
+          Terms of Use
+        </a>
+</div>
+</div>
+</footer>
+<!-- EXISTING JAVASCRIPT -->
+<script src="my-bookings.js"></script>
+</body>
+</html>
