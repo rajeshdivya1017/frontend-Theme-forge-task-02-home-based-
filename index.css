@@ -2719,3 +2719,41 @@ text-decoration: none !important;
 border-bottom: none !important;
 box-shadow: none !important;
 }
+
+/* =========================================
+MOBILE PRELOADER CENTER ALIGNMENT FIX
+Preserve existing preloader design
+========================================= */
+
+@media (max-width: 560px) {
+.preloader {
+position: fixed;
+inset: 0;
+width: 100%;
+min-height: 100vh;
+min-height: 100dvh;
+box-sizing: border-box;
+display: grid;
+place-items: center;
+padding: 20px;
+}
+
+.loader-content {
+width: min(340px, 100%);
+margin: 0;
+transform: translateY(0);
+}
+
+.loader-logo-wrap {
+flex-shrink: 0;
+}
+
+.loader-logo {
+max-width: 145px;
+max-height: 80px;
+}
+
+.loader-track {
+width: min(230px, 100%);
+}
+}
